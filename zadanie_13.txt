@@ -1,0 +1,30 @@
+// Определить остаток заработной платы каждого рабочего первой бригады, если в фонд взаимопомощи был перечислен однодневный заработок.
+fun main() {
+
+    println("Фамилия\t\tЗарплата\tID")
+
+	val ID = arrayOf(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
+    val name = arrayOf("f1","f2","f3","f4","f5","f6","f7","f8","f9","f10","f11","f12","f13","f14","f15")
+    val zp = arrayOf( 15.0, 13.0, 15.3, 16.5, 15.5, 16.4, 15.5, 14.0, 16.1, 17.0, 16.5, 15.0, 15.5, 17.0, 16.0)
+
+    for (n in 0..14){
+        val a=name[n]
+        val z=zp[n]
+        val id=ID[n]
+		
+        print("$a \t\t")
+        print("$z \t\t")
+        println(id)
+    }
+	
+    val first = arrayOf(zp[0],zp[1],zp[2],zp[3], zp[4])  
+    var worker = 0
+    
+    for (n in 0..4){
+         worker++
+    		var del = first[n] / 22
+    		var result = first[n] - del
+    
+    println("Остаток заработной платы" + worker + "рабочего первой бригады: " + "%.2f".format(result))        
+	}
+}
